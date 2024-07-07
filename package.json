@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pixie": "file:local_modules/pixie"
+  }
+}
