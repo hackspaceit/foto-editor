@@ -1,0 +1,9 @@
+export declare const IS_CLIENT: boolean;
+export declare const UA: string;
+export declare const IS_IOS: boolean;
+export declare const IS_ANDROID: boolean;
+export declare const IS_MOBILE: boolean;
+export declare const IS_IPHONE: boolean;
+export declare const IS_FIREFOX: boolean;
+export declare const IS_CHROME: any;
+export declare const IS_SAFARI: any;

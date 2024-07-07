@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare enum ObjectName {
     Text = "text",
     Shape = "shape",

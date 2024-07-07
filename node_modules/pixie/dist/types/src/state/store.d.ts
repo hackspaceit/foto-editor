@@ -15,7 +15,7 @@ export declare const useStore: import("zustand").UseBoundStore<Omit<Omit<import(
         (listener: (selectedState: PixieState, previousSelectedState: PixieState) => void): () => void;
         <U>(selector: (state: PixieState) => U, listener: (selectedState: U, previousSelectedState: U) => void, options?: {
             equalityFn?: ((a: U, b: U) => boolean) | undefined;
-            fireImmediately?: boolean | undefined;
+            fireImmediately?: boolean;
         } | undefined): () => void;
     };
 }, "setState"> & {

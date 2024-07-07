@@ -1,0 +1,20 @@
+import { ImageFilePreview } from './file-preview/image-file-preview';
+import { FileEntry } from '../file-entry';
+import { DefaultFilePreview } from './file-preview/default-file-preview';
+import { TextFilePreview } from './file-preview/text-file-preview';
+import { VideoFilePreview } from './file-preview/video-file-preview';
+import { AudioFilePreview } from './file-preview/audio-file-preview';
+import { PdfFilePreview } from './file-preview/pdf-file-preview';
+import { WordDocumentFilePreview } from './file-preview/word-document-file-preview';
+export declare const AvailablePreviews: {
+    readonly text: typeof TextFilePreview;
+    readonly video: typeof VideoFilePreview;
+    readonly audio: typeof AudioFilePreview;
+    readonly image: typeof ImageFilePreview;
+    readonly pdf: typeof PdfFilePreview;
+    readonly spreadsheet: typeof WordDocumentFilePreview;
+    readonly powerPoint: typeof WordDocumentFilePreview;
+    readonly word: typeof WordDocumentFilePreview;
+    readonly 'text/rtf': typeof DefaultFilePreview;
+};
+export declare function getPreviewForEntry(entry: FileEntry): typeof DefaultFilePreview | typeof TextFilePreview | typeof VideoFilePreview | typeof AudioFilePreview | typeof ImageFilePreview | typeof PdfFilePreview | typeof WordDocumentFilePreview;

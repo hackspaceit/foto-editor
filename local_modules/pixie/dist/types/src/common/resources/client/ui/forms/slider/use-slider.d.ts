@@ -1,0 +1,55 @@
+import React, { HTMLAttributes, ReactNode, RefObject } from 'react';
+import type { NumberFormatOptions } from '@internationalized/number';
+export interface UseSliderProps<T = number[]> {
+    formatOptions?: NumberFormatOptions;
+    onPointerDown?: () => void;
+    onPointerMove?: (e: React.PointerEvent) => void;
+    onChange?: (value: T) => void;
+    onChangeEnd?: (value: T) => void;
+    value?: T;
+    defaultValue?: T;
+    getValueLabel?: (value: number) => string;
+    minValue?: number;
+    maxValue?: number;
+    step?: number;
+    isDisabled?: boolean;
+    size?: 'xs' | 'sm' | 'md';
+    label?: ReactNode;
+    inline?: boolean;
+    className?: string;
+    width?: string;
+    showValueLabel?: boolean;
+    fillColor?: 'primary' | string;
+    trackColor?: 'primary' | 'neutral' | string;
+    showThumbOnHoverOnly?: boolean;
+    thumbSize?: string;
+    wrapperHeight?: string;
+}
+export interface UseSliderReturn {
+    domProps: HTMLAttributes<HTMLElement>;
+    trackRef: RefObject<HTMLDivElement>;
+    isPointerOver: boolean;
+    showThumbOnHoverOnly?: boolean;
+    thumbSize?: string;
+    step: number;
+    isDisabled: boolean;
+    values: number[];
+    minValue: number;
+    maxValue: number;
+    focusedThumb: number | undefined;
+    labelId: string | undefined;
+    groupId: string;
+    thumbIds: string[];
+    numberFormatter: Intl.NumberFormat;
+    getThumbPercent: (index: number) => number;
+    getThumbMinValue: (index: number) => number;
+    getThumbMaxValue: (index: number) => number;
+    getThumbValueLabel: (index: number) => string;
+    setThumbValue: (index: number, value: number) => void;
+    updateDraggedThumbs: (index: number, dragging: boolean) => void;
+    isThumbDragging: (index: number) => boolean;
+    setThumbEditable: (index: number, editable: boolean) => void;
+    setFocusedThumb: (index: number | undefined) => void;
+    getValueLabel?: (value: number) => string;
+}
+export declare function useSlider({ minValue, maxValue, isDisabled, step, formatOptions, onChangeEnd, onPointerDown, label, getValueLabel, showThumbOnHoverOnly, thumbSize, onPointerMove, ...props }: UseSliderProps): UseSliderReturn;
